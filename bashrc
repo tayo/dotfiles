@@ -44,6 +44,7 @@ elif [ "$UNAME" == "SunOS"  ]; then
 fi
 
 alias l='ls -CF'
+alias la='ls -aCF'
 alias ll='ls -lh'
 alias ssh='ssh -Y'
 alias grep='grep --color=auto -n --exclude=tags'

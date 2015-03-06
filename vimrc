@@ -12,11 +12,11 @@ syntax on
 "set background=dark
 set tabstop=2
 set shiftwidth=2
-set smartindent
+"set smartindent "apparently deprecated..
 set autoindent
 set showmatch   "match parentheses
 set matchtime=3
-set expandtab   "change tabs into spaces 
+set expandtab   "change tabs into four spaces
 set incsearch   "searches in realtime as you type
 set ruler
 set hlsearch
