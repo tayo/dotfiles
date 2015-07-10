@@ -78,3 +78,11 @@ au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
 
 "set spell   "turn on spell-checking
 
+"Gvim options
+if has("gui_running")
+  :set guifont=Monospace\ 10
+  set lines=50 columns=100
+  :set guioptions-=T  "remove toolbar
+  :set guioptions-=r  "remove right-hand scrollbar
+  :set guioptions-=L  "remove left-hand scrollbar
+endif
