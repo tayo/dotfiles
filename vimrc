@@ -12,11 +12,12 @@ syntax on
 "set background=dark
 set tabstop=2
 set shiftwidth=2
+"set cindent
 "set smartindent "apparently deprecated..
 set autoindent
 set showmatch   "match parentheses
 set matchtime=3
-set expandtab   "change tabs into four spaces
+set expandtab   "change tabs into spaces
 set incsearch   "searches in realtime as you type
 set ruler
 set hlsearch
@@ -75,6 +76,7 @@ let g:netrw_liststyle=3 "use hierarchical listing in netrw
 let g:netrw_browse_split=4 "open new file in preview window   
 
 au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
+au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
 
 "set spell   "turn on spell-checking
 
