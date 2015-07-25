@@ -268,3 +268,7 @@ hi! default link bbcodeUnderline htmlUnderline
 " == Commands ==
 command! MoriaDark  let g:moria_style = "dark"  | colorscheme moria
 command! MoriaLight let g:moria_style = "light" | colorscheme moria
+"
+" execute "command! -nargs=1 Colo let g:moria_style = \"<args>\" | colo moria"
+"
+let colors_name = "moria"

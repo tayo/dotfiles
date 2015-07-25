@@ -82,7 +82,8 @@ au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
 
 "Gvim options
 if has("gui_running")
-  :set guifont=Monospace\ 10
+  ":set guifont=Monospace\ 10
+  :set guifont=Ubuntu\ Mono\ 12
   set lines=50 columns=100
   :set guioptions-=T  "remove toolbar
   :set guioptions-=r  "remove right-hand scrollbar

@@ -65,6 +65,12 @@ alias b32='export LD_LIBRARY_PATH=/opt/gnu/lib'
 alias b64='export LD_LIBRARY_PATH=/opt/gnu/lib/amd64'
 alias ball='export LD_LIBRARY_PATH=/opt/gnu/lib/amd64:/opt/gnu/lib'
 
+# Scala variables
+#export
+# Java
+#source /etc/environment
+unset JAVA_TOOL_OPTIONS
+
 # M5 simulator definitions
 #export M5_ROOT='/tcc/u/tayo/macrochip'
 #export PATH=$M5_ROOT/sparc64-xcc/prefix/bin:$PATH 

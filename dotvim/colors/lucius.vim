@@ -6,7 +6,6 @@ hi clear
 if exists("syntax_on")
     syntax reset
 endif
-let colors_name="lucius"
 
 " Summary:
 " Color scheme with dark and light versions (GUI and 256 color terminal).
@@ -259,4 +258,5 @@ command! LuciusDark  let g:lucius_style = "dark"  | colorscheme lucius
 command! LuciusLight let g:lucius_style = "light" | colorscheme lucius
 command! LuciusBlue  let g:lucius_style = "blue"  | colorscheme lucius
 execute "command! -nargs=1 Colo let g:lucius_style = \"<args>\" | colo lucius"
+let colors_name="lucius"
 
