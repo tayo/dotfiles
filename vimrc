@@ -74,11 +74,26 @@ endif
 
 let g:netrw_liststyle=3 "use hierarchical listing in netrw
 let g:netrw_browse_split=4 "open new file in preview window   
+let g:netrw_altv=1 "open new file in vertical split (autochdir focuses there)
+:set noea
+:set nosplitright
+
+" Plugin Management
+set rtp+=~/.vim/bundle/Vundle.vim  "runtime path to include Vundle
+call vundle#begin()                "initialize Vundle
+"""""""List of plugins
+Plugin 'gmarik/Vundle.vim'         "let Vundle handle Vundle
+Plugin 'bling/vim-airline'
+"""""""
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 
 au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
 au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
 
 "set spell   "turn on spell-checking
+
 
 "Gvim options
 if has("gui_running")
