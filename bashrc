@@ -53,30 +53,3 @@ alias hh='history | less'
 alias vi='vim -O'
 alias sr="screen -R"
 
-# Maxeler variables
-#export LM_LICENSE_FILE=$LM_LICENSE_FILE:7193@cidlic0:2100@ee-matlab
-alias mdb="make distclean build"
-alias mdr="make distclean run"
-
-#export GWT='~tayo/gwt-mac-1.3.3'
-#export GWT_EXTERNAL_BROWSER='firefox'
-
-alias b32='export LD_LIBRARY_PATH=/opt/gnu/lib'
-alias b64='export LD_LIBRARY_PATH=/opt/gnu/lib/amd64'
-alias ball='export LD_LIBRARY_PATH=/opt/gnu/lib/amd64:/opt/gnu/lib'
-
-# Scala variables
-#export
-# Java
-#source /etc/environment
-unset JAVA_TOOL_OPTIONS
-
-# M5 simulator definitions
-#export M5_ROOT='/tcc/u/tayo/macrochip'
-#export PATH=$M5_ROOT/sparc64-xcc/prefix/bin:$PATH 
-#export PATH=$M5_ROOT/scons:$PATH
-#export M5THREADS_DIR=$M5_ROOT/m5threads
-
-#export PATH=$PATH:/filer1/vol1/ee382a-spr0809/m5_package/scons/
-#export PATH=$PATH:/kozyrakis/users/sanchezd/mercurial-1.1.2/
-#export PATH=$PATH:/kozyrakis/projects/hw_scheduling/sparc64-xcc/prefix/bin/
