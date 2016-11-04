@@ -67,13 +67,18 @@ if g:lucius_style == "dark" || g:lucius_style == "blue"
 
     "tayo: prefer background more gray (ctermbg)
     "hi Normal       guifg=#e0e0e0   guibg=#202020   ctermfg=253    ctermbg=234       gui=none      cterm=none
-    hi Normal       guifg=#e0e0e0   guibg=#202020   ctermfg=253    ctermbg=235       gui=none      cterm=none
+
+    "tayo: testing -- slightly lighter GUI background
+    "hi Normal       guifg=#e0e0e0   guibg=#202020   ctermfg=253    ctermbg=235       gui=none      cterm=none
+    hi Normal       guifg=#e0e0e0   guibg=#262626   ctermfg=253    ctermbg=235       gui=none      cterm=none
 
     if g:lucius_style == "blue"
         hi Normal                   guibg=#002b36
     endif
 
-    hi Comment      guifg=#707070   guibg=NONE      ctermfg=240    ctermbg=NONE      gui=none      cterm=none
+    "tayo: italics comments in GUI
+    "hi Comment      guifg=#707070   guibg=NONE      ctermfg=240    ctermbg=NONE      gui=none      cterm=none
+    hi Comment      guifg=#707070   guibg=NONE      ctermfg=240    ctermbg=NONE      gui=italic    cterm=none
 
     hi Constant     guifg=#e0e090   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=none      cterm=none
     hi BConstant    guifg=#e0e090   guibg=NONE      ctermfg=187    ctermbg=NONE      gui=bold      cterm=bold
@@ -144,7 +149,9 @@ if g:lucius_style == "dark" || g:lucius_style == "blue"
     hi Directory    guifg=#b0d0a0   guibg=NONE      ctermfg=151    ctermbg=NONE      gui=none      cterm=none
     hi ErrorMsg     guifg=#ee0000   guibg=NONE      ctermfg=196    ctermbg=NONE      gui=none      cterm=none
     hi SignColumn   guifg=#a0b0b0   guibg=#282828   ctermfg=145    ctermbg=233       gui=none      cterm=none
-    hi LineNr       guifg=bg        guibg=#808080   ctermfg=bg     ctermbg=246       gui=none      cterm=none
+    "tayo: changing color of line nums. less contrast with the normal line
+    "hi LineNr       guifg=bg        guibg=#808080   ctermfg=bg     ctermbg=246       gui=none      cterm=none
+    hi LineNr       guifg=#6b6b55   guibg=#1e1e1e   ctermfg=243    ctermbg=234       gui=none      cterm=none
     hi MoreMsg      guifg=#60c0d0   guibg=NONE      ctermfg=117    ctermbg=NONE      gui=none      cterm=none
     hi ModeMsg      guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
     hi Question     guifg=fg        guibg=NONE      ctermfg=fg     ctermbg=NONE      gui=none      cterm=none
@@ -228,7 +235,9 @@ elseif g:lucius_style == "light"
     hi Directory    guifg=#008000   guibg=NONE      ctermfg=29     ctermbg=NONE      gui=none      cterm=none
     hi ErrorMsg     guifg=#a00000   guibg=NONE      ctermfg=124    ctermbg=NONE      gui=none      cterm=none
     hi SignColumn   guifg=#708090   guibg=#f8f8f8   ctermfg=66     ctermbg=231       gui=none      cterm=none
-    hi LineNr       guifg=bg        guibg=#a0a0a0   ctermfg=231    ctermbg=247       gui=none      cterm=none
+    "tayo: less contrast in line numbers
+    "hi LineNr       guifg=bg        guibg=#a0a0a0   ctermfg=231    ctermbg=247       gui=none      cterm=none
+    hi LineNr       guifg=bg        guibg=#a0a0a0   ctermfg=247    ctermbg=255       gui=none      cterm=none
     hi MoreMsg      guifg=#2060c0   guibg=NONE      ctermfg=4      ctermbg=NONE      gui=none      cterm=none
     hi ModeMsg      guifg=#000000   guibg=NONE      ctermfg=16     ctermbg=NONE      gui=none      cterm=none
     hi Question     guifg=fg        guibg=NONE      ctermfg=NONE   ctermbg=NONE      gui=none      cterm=none

@@ -2,7 +2,7 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "moria"
+let colors_name = "moria_tayo"
 
 if exists("g:moria_style")
     let s:moria_style = g:moria_style
@@ -29,7 +29,7 @@ if s:moria_style == "black" || s:moria_style == "dark"
 elseif s:moria_style == "light" || s:moria_style == "white"
     set background=light
 else
-    let s:moria_style = &background 
+    let s:moria_style = &background
 endif
 
 hi clear
@@ -42,20 +42,17 @@ endif
 if &background == "dark"
     if s:moria_style == "dark"
         "tayo:edited to make ctermbg and ctermfg be shades of gray
-        hi Normal ctermbg=234 ctermfg=251 guibg=#202020 guifg=#d0d0d0 gui=none
-        "hi Normal ctermbg=Black ctermfg=LightGray guibg=#202020 guifg=#d0d0d0 gui=none
-
-        hi CursorColumn ctermbg=DarkGray ctermfg=White guibg=#404040 gui=none
+        hi Normal ctermbg=235 ctermfg=252 guibg=#202020 guifg=#d0d0d0 gui=none
+        hi CursorColumn ctermbg=none ctermfg=none guibg=#404040 gui=none
         "tayo:removing underline from CursorLine
         "hi CursorLine ctermbg=DarkGray ctermfg=White guibg=#404040 gui=none
-        hi CursorLine ctermbg=DarkGray ctermfg=White cterm=none guibg=#404040 gui=none
+        hi CursorLine ctermbg=237 ctermfg=NONE cterm=none guibg=#404040 gui=none
     elseif s:moria_style == "black"
-        hi Normal ctermbg=Black ctermfg=LightGray guibg=#000000 guifg=#d0d0d0 gui=none
-
-        hi CursorColumn ctermbg=DarkGray ctermfg=White guibg=#3a3a3a gui=none
+        hi Normal ctermbg=232 ctermfg=252 guibg=#000000 guifg=#d0d0d0 gui=none
+        hi CursorColumn ctermbg=none ctermfg=none guibg=#3a3a3a gui=none
         "tayo:removing underline from CursorLine
         "hi CursorLine ctermbg=DarkGray ctermfg=White guibg=#3a3a3a gui=none
-        hi CursorLine ctermbg=DarkGray ctermfg=White cterm=none guibg=#3a3a3a gui=none
+        hi CursorLine ctermbg=235 ctermfg=NONE cterm=none guibg=#3a3a3a gui=none
     endif
     if s:moria_monochrome == 1
         hi FoldColumn ctermbg=bg guibg=bg guifg=#a0a0a0 gui=none
@@ -75,26 +72,27 @@ if &background == "dark"
             hi Folded guibg=#4e4e4e guifg=#c0c0c0 gui=bold
         else
             hi Folded guibg=#4e4e4e guifg=#c0c0c0 gui=none
-        endif            
+        endif
     else
         hi FoldColumn ctermbg=bg guibg=bg guifg=#8fa5d1 gui=none
-        hi LineNr guifg=#8fa5d1 gui=none
+        "tayo#hi LineNr guifg=#8fa5d1 gui=none
+        hi LineNr ctermbg=bg  ctermfg=153 guibg=bg      guifg=#8fa5d1 gui=bold
         hi MoreMsg guibg=bg guifg=#97abd5 gui=bold
         hi NonText ctermfg=DarkGray guibg=bg guifg=#8fa5d1 gui=bold
         hi Pmenu guibg=#6381be guifg=#000000 gui=none
         hi PmenuSbar guibg=#41609e guifg=fg gui=none
         hi PmenuThumb guibg=#bdcae3 guifg=bg gui=none
         hi SignColumn ctermbg=bg guibg=bg guifg=#8fa5d1 gui=none
-        hi StatusLine ctermbg=LightGray ctermfg=Black guibg=#334b7d guifg=fg gui=bold
-        hi StatusLineNC ctermbg=DarkGray ctermfg=Black guibg=#25365a guifg=fg gui=none
+        "##
+        hi StatusLine ctermbg=240 ctermfg=190 cterm=bold guibg=#334b7d guifg=fg gui=bold
+        hi StatusLineNC ctermbg=240 ctermfg=101 cterm=none guibg=#25365a guifg=fg gui=none
         hi TabLine guibg=#41609e guifg=fg gui=underline
         hi TabLineFill guibg=#41609e guifg=fg gui=underline
-        hi VertSplit ctermbg=LightGray ctermfg=Black guibg=#25365a guifg=fg gui=none
         if s:moria_fontface == "mixed"
             hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=bold
         else
             hi Folded guibg=#4e4e4e guifg=#bdcae3 gui=none
-        endif            
+        endif
     endif
     hi Cursor guibg=#ffa500 guifg=bg gui=none
     hi DiffAdd guibg=#008b00 guifg=fg gui=none
@@ -126,28 +124,33 @@ if &background == "dark"
     hi WarningMsg guibg=bg guifg=#ee2c2c gui=bold
     hi WildMenu guibg=#e0e000 guifg=#000000 gui=bold
 
-    "tayo: make comments italic
+    "tayo: add color settings for cterm, add italic for gui
     "hi Comment guibg=bg guifg=#d0d0a0 gui=none
-    hi Comment guibg=bg guifg=#d0d0a0 gui=italic
+    hi Comment    ctermbg=bg  ctermfg=187             guibg=bg      guifg=#d0d0a0 gui=italic
 
-    hi Constant guibg=bg guifg=#87df71 gui=none
-    hi Error guibg=bg guifg=#ee2c2c gui=none
-    hi Identifier guibg=bg guifg=#7ee0ce gui=none
-    hi Ignore guibg=bg guifg=bg gui=none
+    hi Constant   ctermbg=bg  ctermfg=121             guibg=bg      guifg=#87df71 gui=none
+    hi Error      ctermbg=bg  ctermfg=160             guibg=bg      guifg=#ee2c2c gui=none
+    hi Identifier ctermbg=bg  ctermfg=122             guibg=bg      guifg=#7ee0ce gui=none
+    hi Ignore     ctermbg=bg  ctermfg=bg              guibg=bg      guifg=bg      gui=none
     hi lCursor guibg=#00e700 guifg=#000000 gui=none
     hi MatchParen guibg=#008b8b gui=none
-    hi PreProc guibg=bg guifg=#d7a0d7 gui=none
-    hi Special guibg=bg guifg=#e8b87e gui=none
-    hi Todo guibg=#e0e000 guifg=#000000 gui=none
-    hi Underlined ctermbg=Black ctermfg=White guibg=bg guifg=#00a0ff gui=underline    
+    hi PreProc    ctermbg=bg  ctermfg=183             guibg=bg      guifg=#d7a0d7 gui=none
+    hi Special    ctermbg=bg  ctermfg=222             guibg=bg      guifg=#e8b87e gui=none
 
-    if s:moria_fontface == "mixed"
-        hi Statement guibg=bg guifg=#7ec0ee gui=bold
-        hi Type guibg=bg guifg=#f09479 gui=bold
-    else
-        hi Statement guibg=bg guifg=#7ec0ee gui=none
-        hi Type guibg=bg guifg=#f09479 gui=none
-    endif
+    hi Statement  ctermbg=bg  ctermfg=117 cterm=bold  guibg=bg      guifg=#7ec0ee gui=bold
+    hi Type       ctermbg=bg  ctermfg=209 cterm=bold  guibg=bg      guifg=#f09479 gui=bold
+
+    hi Todo       ctermbg=bg  ctermfg=182 cterm=bold  guibg=#e0e000 guifg=fg      gui=none
+    hi Underlined ctermbg=Black ctermfg=White guibg=bg guifg=#00a0ff gui=underline
+    hi VertSplit ctermbg=101 ctermfg=240 guibg=#25365a guifg=fg gui=none
+
+    "if s:moria_fontface == "mixed"
+    "    hi Statement guibg=bg guifg=#7ec0ee gui=bold
+    "    hi Type guibg=bg guifg=#f09479 gui=bold
+    "else
+    "    hi Statement guibg=bg guifg=#7ec0ee gui=none
+    "    hi Type guibg=bg guifg=#f09479 gui=none
+    "endif
 
     hi htmlBold ctermbg=Black ctermfg=White guibg=bg guifg=fg gui=bold
     hi htmlBoldItalic ctermbg=Black ctermfg=White guibg=bg guifg=fg gui=bold,italic
@@ -157,20 +160,15 @@ if &background == "dark"
     hi htmlUnderline ctermbg=Black ctermfg=White guibg=bg guifg=fg gui=underline
     hi htmlUnderlineItalic ctermbg=Black ctermfg=White guibg=bg guifg=fg gui=underline,italic
 elseif &background == "light"
+    "tayo: asserting values for background and foreground
     if s:moria_style == "light"
-        hi Normal ctermbg=White ctermfg=Black guibg=#f0f0f0 guifg=#000000 gui=none
-
-        hi CursorColumn ctermbg=LightGray ctermfg=Black guibg=#d8d8d8 gui=none
-        "tayo
-        "hi CursorLine ctermbg=LightGray ctermfg=Black guibg=#d8d8d8 gui=none
-        hi CursorLine ctermbg=LightGray ctermfg=NONE cterm=none guibg=#d8d8d8 gui=none
+        hi Normal ctermbg=255 ctermfg=237 guibg=#f0f0f0 guifg=#000000 gui=none
+        hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
+        hi CursorLine ctermbg=253 ctermfg=NONE cterm=none guibg=#d8d8d8 gui=none
     elseif s:moria_style == "white"
-        hi Normal ctermbg=White ctermfg=Black guibg=#ffffff guifg=#000000 gui=none
-
-        hi CursorColumn ctermbg=LightGray ctermfg=Black guibg=#dfdfdf gui=none
-        "tayo: removing underline and making the background white
-        "hi CursorLine ctermbg=LightGray ctermfg=Black guibg=#dfdfdf gui=none
-        hi CursorLine ctermbg=LightGray ctermfg=Black cterm=none guibg=#dfdfdf gui=none
+        hi Normal ctermbg=231 ctermfg=239 guibg=#ffffff guifg=#000000 gui=none
+        hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
+        hi CursorLine ctermbg=254 ctermfg=NONE cterm=none guibg=#dfdfdf gui=none
     endif
     if s:moria_monochrome == 1
         hi FoldColumn ctermbg=bg guibg=bg guifg=#7a7a7a gui=none
@@ -190,7 +188,8 @@ elseif &background == "light"
     else
         hi FoldColumn ctermbg=bg guibg=bg guifg=#375288 gui=none
         hi Folded guibg=#cfcfcf guifg=#25365a gui=bold
-        hi LineNr guifg=#375288 gui=none
+        "hi LineNr guifg=#375288 gui=none
+        hi LineNr ctermbg=bg  ctermfg=60  guibg=bg      guifg=#375288 gui=bold
         hi MoreMsg guibg=bg guifg=#2f4471 gui=bold
         hi NonText ctermfg=DarkGray guibg=bg guifg=#375288 gui=bold
         hi Pmenu guibg=#708bc5 guifg=#000000 gui=none
@@ -200,11 +199,12 @@ elseif &background == "light"
         "tayo
         "hi StatusLine ctermbg=Black ctermfg=White guibg=#8fa5d1 guifg=fg gui=bold
         "hi StatusLineNC ctermbg=LightGray ctermfg=Black guibg=#a6b7db guifg=fg gui=none
-        hi StatusLine ctermbg=190 ctermfg=237 guibg=#8fa5d1 guifg=fg gui=bold
-        hi StatusLineNC ctermbg=250 ctermfg=237 guibg=#a6b7db guifg=fg gui=none
+        hi StatusLine ctermbg=fg ctermfg=190 cterm=bold guibg=#8fa5d1 guifg=fg gui=bold
+        hi StatusLineNC ctermbg=fg ctermfg=bg cterm=none guibg=#a6b7db guifg=fg gui=none
+        "bug with StatusLine? if bold is turned off, then ctermbg and ctermfg
+        "are flipped
         hi TabLine guibg=#b8c6e2 guifg=fg gui=underline
         hi TabLineFill guibg=#b8c6e2 guifg=fg gui=underline
-        hi VertSplit ctermbg=LightGray ctermfg=Black guibg=#a6b7db guifg=fg gui=none
     endif
     hi Cursor guibg=#883400 guifg=bg gui=none
     hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
@@ -214,7 +214,7 @@ elseif &background == "light"
     hi Directory guibg=bg guifg=#0000f0 gui=none
     hi ErrorMsg guibg=#ee2c2c guifg=#ffffff gui=bold
     hi IncSearch guibg=#ffcd78 gui=none
-    hi ModeMsg ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold
+    hi ModeMsg ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold
     hi PmenuSel guibg=#ffff00 guifg=#000000 gui=none
     hi Question guibg=bg guifg=#813f11 gui=bold
     hi Search guibg=#a0f0a0 gui=none
@@ -231,34 +231,34 @@ elseif &background == "light"
         hi Visual ctermbg=LightGray ctermfg=Black guibg=#c4c4c4 gui=none
     else
         hi Visual ctermbg=LightGray ctermfg=Black guibg=#c4c4c4 guifg=fg gui=none
-    endif    
+    endif
     hi VisualNOS ctermbg=DarkGray ctermfg=Black guibg=bg guifg=#a0a0a0 gui=bold,underline
     hi WarningMsg guibg=bg guifg=#ee2c2c gui=bold
-    hi WildMenu guibg=#ffff00 guifg=fg gui=bold
 
-    "tayo: make comments italic
-    "hi Comment guibg=bg guifg=#786000 gui=none
-    hi Comment guibg=bg guifg=#786000 gui=italic
-    hi Constant guibg=bg guifg=#077807 gui=none
-    hi Error guibg=bg guifg=#ee2c2c gui=none
-    hi Identifier guibg=bg guifg=#007080 gui=none
-    hi Ignore guibg=bg guifg=bg gui=none
-    hi lCursor guibg=#008000 guifg=#ffffff gui=none
-    hi MatchParen guibg=#00ffff gui=none
-    hi PreProc guibg=bg guifg=#800090 gui=none
-    hi Special guibg=bg guifg=#912f11 gui=none
-    hi Statement guibg=bg guifg=#1f3f81 gui=bold
-    hi Todo guibg=#ffff00 guifg=fg gui=none
-    hi Type guibg=bg guifg=#912f11 gui=bold
-    hi Underlined ctermbg=White ctermfg=Black guibg=bg guifg=#0000cd gui=underline
+    "tayo: add color settings for cterm, add italic for gui
+    hi Comment    ctermbg=bg  ctermfg=94              guibg=bg      guifg=#786000 gui=italic
+    hi Constant   ctermbg=bg  ctermfg=28              guibg=bg      guifg=#077807 gui=none
+    hi Error      ctermbg=bg  ctermfg=160             guibg=bg      guifg=#ee2c2c gui=none
+    hi Identifier ctermbg=bg  ctermfg=24              guibg=bg      guifg=#007080 gui=none
+    hi Ignore     ctermbg=bg  ctermfg=bg              guibg=bg      guifg=bg      gui=none
+    hi lCursor                                        guibg=#008000 guifg=#ffffff gui=none
+    hi MatchParen                                     guibg=#00ffff               gui=none
+    hi PreProc    ctermbg=bg  ctermfg=54              guibg=bg      guifg=#800090 gui=none
+    hi Special    ctermbg=bg  ctermfg=88              guibg=bg      guifg=#912f11 gui=none
+    hi Statement  ctermbg=bg  ctermfg=18  cterm=bold  guibg=bg      guifg=#1f3f81 gui=bold
+    hi Todo       ctermbg=226 ctermfg=fg              guibg=#ffff00 guifg=fg      gui=none
+    hi Type       ctermbg=bg  ctermfg=88  cterm=bold  guibg=bg      guifg=#912f11 gui=bold
+    hi Underlined ctermbg=bg  ctermfg=19              guibg=bg      guifg=#0000cd gui=underline
+    hi VertSplit ctermbg=253 ctermfg=233 guibg=#a6b7db guifg=fg gui=none
+    hi WildMenu   ctermbg=237 ctermfg=231 cterm=bold  guibg=#ffff00 guifg=fg      gui=bold
 
-    hi htmlBold ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold
-    hi htmlBoldItalic ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold,italic
-    hi htmlBoldUnderline ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold,underline
-    hi htmlBoldUnderlineItalic ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=bold,underline,italic
-    hi htmlItalic ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=italic
-    hi htmlUnderline ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=underline
-    hi htmlUnderlineItalic ctermbg=White ctermfg=Black guibg=bg guifg=fg gui=underline,italic
+    hi htmlBold ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold
+    hi htmlBoldItalic ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold,italic
+    hi htmlBoldUnderline ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold,underline
+    hi htmlBoldUnderlineItalic ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold,underline,italic
+    hi htmlItalic ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=italic
+    hi htmlUnderline ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=underline
+    hi htmlUnderlineItalic ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=underline,italic
 endif
 
 hi! default link bbcodeBold htmlBold
@@ -270,10 +270,11 @@ hi! default link bbcodeItalicUnderline htmlUnderlineItalic
 hi! default link bbcodeUnderline htmlUnderline
 
 " == Commands ==
-command! MoriaDark  let g:moria_style = "dark"  | colorscheme moria
-command! MoriaLight let g:moria_style = "light" | colorscheme moria
-command! MoriaWhite let g:moria_style = "white" | colorscheme moria
+command! MoriaDark  let g:moria_style = "dark"  | colorscheme moria_tayo
+command! MoriaBlack let g:moria_style = "black" | colorscheme moria_tayo
+command! MoriaLight let g:moria_style = "light" | colorscheme moria_tayo
+command! MoriaWhite let g:moria_style = "white" | colorscheme moria_tayo
 "
 " execute "command! -nargs=1 Colo let g:moria_style = \"<args>\" | colo moria"
 "
-let colors_name = "moria"
+let colors_name = "moria_tayo"

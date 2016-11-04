@@ -346,6 +346,7 @@ elseif &background=='dark'
     hi Underlined	gui=underline  
     "tayo
     "hi CursorLine	gui=underline 
+    hi CursorLine	gui=none 
   endif
 
   " gui define for background=dark end here
@@ -404,7 +405,9 @@ elseif &background=='dark'
       hi CursorColumn	ctermfg=NONE	ctermbg=DarkRed
 
       hi TabLineSel	ctermfg=fg	ctermbg=bg
-      hi CursorLine	ctermfg=NONE	ctermbg=bg		cterm=underline
+      "tayo
+      "hi CursorLine	ctermfg=NONE	ctermbg=bg		cterm=underline
+      hi CursorLine	ctermfg=NONE	ctermbg=Black	cterm=none
 
       hi MatchParen	ctermfg=NONE	ctermbg=DarkMagenta
     endif
@@ -570,12 +573,15 @@ elseif &background=='dark'
       hi TabLineFill	ctermfg=fg	ctermbg=28	cterm=NONE
       hi TabLineSel	ctermfg=fg	ctermbg=NONE	cterm=NONE
       hi CursorColumn	ctermfg=NONE	ctermbg=88	cterm=NONE
-      hi CursorLine	ctermfg=NONE	ctermbg=NONE	cterm=underline
+      "tayo
+      "hi CursorLine	ctermfg=NONE	ctermbg=NONE	cterm=underline
+      hi CursorLine	ctermfg=NONE	ctermbg=234	cterm=none
       hi MatchParen	ctermfg=NONE	ctermbg=90
       hi TabLine	cterm=underline  
       hi TabLineFill	cterm=underline  
       hi Underlined	cterm=underline  
-      hi CursorLine	cterm=underline 
+      "tayo
+      "hi CursorLine	cterm=underline 
     endif
 
   endif " t_Co
