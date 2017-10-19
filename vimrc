@@ -3,10 +3,10 @@
 
 "Colorscheme
 set t_Co=256    "enable 256 color support in vim
-let g:lucius_style="light"
+let g:lucius_style="dark"
 let g:moria_style="light"
 let g:inkpot_black_background=0
-colorscheme moria  "zenburn256,lucius,wombat256,moria,xoria256,jellybeans
+colorscheme moria_tayo  "zenburn256,lucius,wombat256,moria,xoria256,jellybeans
 syntax on
 
 "set background=dark
@@ -26,6 +26,7 @@ set textwidth=80
 set wrap
 set modeline
 set ls=2
+set number       "line numbers
 "set mouse=a     "enable mouse usage
 
 "set paste   "paste things without worrying about indenting 'nopaste' to turn off
@@ -47,6 +48,10 @@ set wildmenu wildmode=longest:full
 
 
 ""Custom Keyboard Mappings
+"=================
+
+command Bgd execute "set bg=dark"
+command Bgl execute "set bg=light"
 "use CTRL-N to remove highlighted search terms
 nmap <silent> <C-N> :silent noh<CR>h 
 "CTRL-[J|K|H|L] to move between windows
@@ -73,33 +78,22 @@ else
 endif
 
 let g:netrw_liststyle=3 "use hierarchical listing in netrw
-let g:netrw_browse_split=4 "open new file in preview window   
+let g:netrw_browse_split=4 "open new file in preview window
 let g:netrw_altv=1 "open new file in vertical split (autochdir focuses there)
 :set noea
 :set nosplitright
 
-" Plugin Management
-set rtp+=~/.vim/bundle/Vundle.vim  "runtime path to include Vundle
-call vundle#begin()                "initialize Vundle
-"""""""List of plugins
-Plugin 'gmarik/Vundle.vim'         "let Vundle handle Vundle
-Plugin 'bling/vim-airline'
-"""""""
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
+"au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
 au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
 
 "set spell   "turn on spell-checking
-
 
 "Gvim options
 if has("gui_running")
   ":set guifont=Monospace\ 10
   :set guifont=Ubuntu\ Mono\ 12
   set lines=50 columns=100
+  :set guioptions-=m  "remove menubar (File, Edit, etc)
   :set guioptions-=T  "remove toolbar
   :set guioptions-=r  "remove right-hand scrollbar
   :set guioptions-=L  "remove left-hand scrollbar
