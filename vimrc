@@ -1,18 +1,19 @@
+"TODO: Is there a way to include google.vim from my laptop (non-prod machine)
 
-" tayo
+"tayo's external vimrc config below
 
 "Colorscheme
 set t_Co=256    "enable 256 color support in vim
-let g:lucius_style="light"
+let g:lucius_style="dark"
 let g:moria_style="light"
 let g:inkpot_black_background=0
-colorscheme moria  "zenburn256,lucius,wombat256,moria,xoria256,jellybeans
+colorscheme moria_tayo  "zenburn256,lucius,wombat256,moria,xoria256,jellybeans
 syntax on
 
 "set background=dark
 set tabstop=2
 set shiftwidth=2
-"set cindent
+set cindent
 "set smartindent "apparently deprecated..
 set autoindent
 set showmatch   "match parentheses
@@ -26,6 +27,7 @@ set textwidth=80
 set wrap
 set modeline
 set ls=2
+set number
 "set mouse=a     "enable mouse usage
 
 "set paste   "paste things without worrying about indenting 'nopaste' to turn off
@@ -48,9 +50,9 @@ set wildmenu wildmode=longest:full
 
 ""Custom Keyboard Mappings
 "use CTRL-N to remove highlighted search terms
-nmap <silent> <C-N> :silent noh<CR>h 
+nmap <silent> <C-N> :silent noh<CR>h
 "CTRL-[J|K|H|L] to move between windows
-map <C-J> <C-W>j 
+map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
@@ -58,7 +60,7 @@ map <C-L> <C-W>l
 filetype on
 autocmd FileType cc,c,cpp,h :set cindent
 autocmd FileType make :set noexpandtab      "use hard tabs in Makefiles
-autocmd FileType perl :hi Comment ctermfg=Blue  
+autocmd FileType perl :hi Comment ctermfg=Blue
 autocmd FileType tex :map <silent> <C-V> :s/^/%/<CR><C-N><CR>
 autocmd Filetype stata :set ft=sh
 "autocmd FileType tex :map <silent> <C-?> :s/^/%/<CR><C-N><CR>
@@ -73,33 +75,24 @@ else
 endif
 
 let g:netrw_liststyle=3 "use hierarchical listing in netrw
-let g:netrw_browse_split=4 "open new file in preview window   
+let g:netrw_browse_split=4 "open new file in preview window
 let g:netrw_altv=1 "open new file in vertical split (autochdir focuses there)
 :set noea
 :set nosplitright
 
-" Plugin Management
-set rtp+=~/.vim/bundle/Vundle.vim  "runtime path to include Vundle
-call vundle#begin()                "initialize Vundle
-"""""""List of plugins
-Plugin 'gmarik/Vundle.vim'         "let Vundle handle Vundle
-Plugin 'bling/vim-airline'
-"""""""
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-
-au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
+"au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
 au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
+au BufRead,BufNewFile *.ts set filetype=javascript "TypeScript == JavaScript
 
 "set spell   "turn on spell-checking
-
 
 "Gvim options
 if has("gui_running")
   ":set guifont=Monospace\ 10
+  ":set guifont=Noto\ Mono\ 12
   :set guifont=Ubuntu\ Mono\ 12
   set lines=50 columns=100
+  :set guioptions-=m  "remove menubar (File, Edit, etc)
   :set guioptions-=T  "remove toolbar
   :set guioptions-=r  "remove right-hand scrollbar
   :set guioptions-=L  "remove left-hand scrollbar
