@@ -1,62 +1,7 @@
-" Welcome to Vim (http://go/vim).
-"
-" If you see this file, your homedir was just created on this workstation.
-" That means either you are new to Google (in that case, welcome!) or you
-" got yourself a faster machine.
-" Either way, the main goal of this configuration is to help you be more
-" productive; if you have ideas, praise or complaints, direct them to
-" vi-users@google.com (http://g/vi-users). We'd especially like to hear from you
-" if you can think of ways to make this configuration better for the next
-" Noogler.
-" If you want to learn more about Vim at Google, see http://go/vimintro.
-
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
 
-" Use the 'google' package by default (see http://go/vim/packages).
-source /usr/share/vim/google/google.vim
-
-
-" Enable and configure Google plugins
-" ===================================
 let mapleader=","
-
-Glug youcompleteme-google
-let g:ycm_goto_buffer_command = 'horizontal-split'
-let g:ycm_always_populate_location_list = 1  "quick jumping to errors
-"<Comma-]"
-nnoremap <Leader>] :YcmCompleter GoTo<CR>
-nnoremap <Leader>F :YcmCompleter FixIt<CR>
-nnoremap <Leader>T :YcmCompleter GetType<CR>
-nnoremap <Leader>P :YcmCompleter GetParent<CR>
-
-Glug codefmt
-Glug codefmt-google
-augroup autoformat_settings
-  autocmd FileType c,cpp NoAutoFormatBuffer
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType proto AutoFormatBuffer clang-format
-  "autocmd FileType python AutoFormatBuffer pyformat
-  autocmd FileType markdown AutoFormatBuffer mdformat
-augroup END
-
-Glug syntastic-google
-
-"Glug grok
-
-" Enable file type based indent configuration and syntax highlighting.
-" Note that when code is pasted via the terminal, vim by default does not detect
-" that the code is pasted (as opposed to when using vim's paste mappings), which
-" leads to incorrect indentation when indent mode is on.
-" To work around this, use ":set paste" / ":set nopaste" to toggle paste mode.
-" You can also use a plugin to:
-" - enter insert mode with paste (https://github.com/tpope/vim-unimpaired)
-" - auto-detect pasting (https://github.com/ConradIrwin/vim-bracketed-paste)
-filetype plugin indent on
-syntax on
-
-
 
 "tayo's external vimrc config below
 
