@@ -105,7 +105,8 @@ if &background == "dark"
     hi ModeMsg guibg=bg guifg=fg gui=bold
     hi PmenuSel guibg=#e0e000 guifg=#000000 gui=none
     hi Question guibg=bg guifg=#e8b87e gui=bold
-    hi Search guibg=#90e090 guifg=#000000 gui=none
+    " tayo: added cterm Search colors
+    hi Search       guifg=#000000   guibg=#90e090   ctermfg=237                      gui=none
     hi SpecialKey guibg=bg guifg=#e8b87e gui=none
     if has("spell")
         hi SpellBad guisp=#ee2c2c gui=undercurl
@@ -166,7 +167,7 @@ elseif &background == "light"
         hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
         hi CursorLine ctermbg=253 ctermfg=NONE cterm=none guibg=#d8d8d8 gui=none
     elseif s:moria_style == "white"
-        hi Normal ctermbg=231 ctermfg=239 guibg=#ffffff guifg=#000000 gui=none
+        hi Normal ctermbg=231 ctermfg=239 guibg=#ffffff guifg=#404040 gui=none
         hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
         hi CursorLine ctermbg=254 ctermfg=NONE cterm=none guibg=#dfdfdf gui=none
     endif
@@ -207,17 +208,25 @@ elseif &background == "light"
         hi TabLineFill guibg=#b8c6e2 guifg=fg gui=underline
     endif
     hi Cursor guibg=#883400 guifg=bg gui=none
-    hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
-    hi DiffChange guibg=#00008b guifg=#ffffff gui=none
-    hi DiffDelete guibg=#8b0000 guifg=#ffffff gui=none
-    hi DiffText guibg=#0000cd guifg=#ffffff gui=bold
+    " tayo: softer colors for diff (taken from Lucius light version)
+    hi DiffAdd      guifg=fg        guibg=#d0e0d0   ctermfg=fg     ctermbg=151       gui=none      cterm=none
+    hi DiffChange   guifg=fg        guibg=#e0d6c0   ctermfg=fg     ctermbg=187       gui=none      cterm=none
+    hi DiffDelete   guifg=fg        guibg=#f0d0d0   ctermfg=fg     ctermbg=181       gui=none      cterm=none
+    hi DiffText     guifg=#d05000   guibg=#e0d6c0   ctermfg=160    ctermbg=187       gui=bold      cterm=bold
+    "hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
+    "hi DiffChange guibg=#00008b guifg=#ffffff gui=none
+    "hi DiffDelete guibg=#8b0000 guifg=#ffffff gui=none
+    "hi DiffText guibg=#0000cd guifg=#ffffff gui=bold
     hi Directory guibg=bg guifg=#0000f0 gui=none
     hi ErrorMsg guibg=#ee2c2c guifg=#ffffff gui=bold
-    hi IncSearch guibg=#ffcd78 gui=none
+    " tayo: added cterm IncSearch -- didn't seem to work..
+    "hi IncSearch                    guibg=#ffcd78   ctermfg=fg     ctermbg=222       gui=none
+    hi IncSearch                    guibg=#ffcd78
     hi ModeMsg ctermbg=bg ctermfg=fg guibg=bg guifg=fg gui=bold
     hi PmenuSel guibg=#ffff00 guifg=#000000 gui=none
     hi Question guibg=bg guifg=#813f11 gui=bold
-    hi Search guibg=#a0f0a0 gui=none
+    " tayo: added cterm Search colors
+    hi Search                       guibg=#a0f0a0   ctermfg=fg     ctermbg=157       gui=none
     hi SpecialKey guibg=bg guifg=#912f11 gui=none
     if has("spell")
         hi SpellBad guisp=#ee2c2c gui=undercurl
