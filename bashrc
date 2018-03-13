@@ -117,6 +117,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Google-specific bash configs.
+if [ -f ~/.bashrc_google ]; then
+    . ~/.bashrc_google
+fi
+
 alias l='ls -CF'
 alias ll='ls -alFh'
 alias la='ls -ACF'
@@ -132,22 +137,18 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # MacOS-specific
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+# ...
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+# Mac OSX
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+fi
 
 alias vi='vim -O -X'  #-O: split vertical, -X : don't connect to X display
-alias tmux='tmx2 -2'  # -2: assume 256 colors
 
-export P4DIFF='vimdiff -f -R'
-#export P4DIFF='gvimdiff -f -R' # GUI version
-#export TERM=screen-256color   # xterm-256color does not work within tmux/screen
-#export BORGUSER=rankbrain
+export TERM=screen-256color   # xterm-256color does not work within tmux/screen
 PROMPT_DIRTRIM=6
-
-# Add Google-specific scripts etc to PATH
-export PATH=$PATH:/google/src/head/depot/google3/devtools/blaze/scripts/
-export PATH=$PATH:/google/data/ro/projects/perf/
-export PATH=$PATH:/google/data/ro/projects/placer/
 
 # do not resolve symlinks. use literal directories. necessary for citc commands
 set -P

@@ -1,3 +1,10 @@
+" Machine-specific configs
+try
+  source ~/.vimrc_google.vim
+catch
+  " No machine-specific vimrc..
+endtry
+
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
 
