@@ -131,13 +131,16 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# MacOS-specific
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
 alias vi='vim -O -X'  #-O: split vertical, -X : don't connect to X display
 alias tmux='tmx2 -2'  # -2: assume 256 colors
-alias allocator_borgcfg='/google/data/ro/teams/traino/borgcfg'
 
 export P4DIFF='vimdiff -f -R'
 #export P4DIFF='gvimdiff -f -R' # GUI version
-export TERM=screen-256color   # xterm-256color does not work within tmux/screen
+#export TERM=screen-256color   # xterm-256color does not work within tmux/screen
 #export BORGUSER=rankbrain
 PROMPT_DIRTRIM=6
 
