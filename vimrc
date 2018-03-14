@@ -1,6 +1,6 @@
 " Machine-specific configs
 try
-  source ~/.vimrc_google.vim
+  source /usr/local/google/home/tayo/.vimrc_google
 catch
   " No machine-specific vimrc..
 endtry
