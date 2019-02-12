@@ -112,7 +112,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep -n --color=auto'
+    alias grep='grep -n --color=auto --exclude=tags'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -128,7 +128,6 @@ alias la='ls -ACF'
 alias pd='pushd'
 alias hh='history | less'
 alias ssh='ssh -Y'
-alias grep='grep --exclude=tags'
 alias sr="screen -R"
 #export PATH=$PATH:/home/tayo/bin/
 
