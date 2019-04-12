@@ -15,9 +15,9 @@ let mapleader=","
 "Colorscheme
 set t_Co=256    "enable 256 color support in vim
 let g:lucius_style="dark"
-let g:moria_style="light"
+let g:moria_style="white"  " white, light, dark, black
 let g:inkpot_black_background=0
-colorscheme moria_tayo  "zenburn256,lucius,wombat256,moria,xoria256,jellybeans
+color moria_tayo "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
 syntax on
 
 "set background=dark
@@ -52,6 +52,9 @@ set tags=./tags;/
 
 set wildmenu wildmode=longest:full
 
+"Status line: configure this better
+"set statusline=%.100F
+
 "set foldmethod=indent
 "set foldminlines=24
 "set foldnestmax=4
@@ -75,6 +78,8 @@ map <C-H> <C-W>h
 map <C-L> <C-W>l
 "CTRL-P: open file under cursor in new split window
 map <C-P> <C-W>f
+"CTRL-A is useful for tmux. I never use the number increment.
+map <C-a> <Nop>
 
 filetype on
 autocmd FileType cc,c,cpp,h :set cindent
@@ -110,7 +115,7 @@ au BufRead,BufNewFile *.ts set filetype=javascript "TypeScript == JavaScript
 if has("gui_running")
   ":set guifont=Monospace\ 10
   ":set guifont=Noto\ Mono\ 12
-  :set guifont=Ubuntu\ Mono\ 12
+  :set guifont=Ubuntu\ Mono\ 11
   set lines=50 columns=120
   :set guioptions-=m  "remove menubar (File, Edit, etc)
   :set guioptions-=T  "remove toolbar

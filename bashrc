@@ -155,7 +155,7 @@ fi
 
 alias vi='vim -O -X'  #-O: split vertical, -X : don't connect to X display
 
-export TERM=screen-256color   # xterm-256color does not work within tmux/screen
+export TERM=xterm-256color   # xterm-256color does not work within tmux/screen
 PROMPT_DIRTRIM=6
 
 # do not resolve symlinks. use literal directories. necessary for citc commands
