@@ -167,7 +167,7 @@ elseif &background == "light"
         hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
         hi CursorLine ctermbg=253 ctermfg=NONE cterm=none guibg=#d8d8d8 gui=none
     elseif s:moria_style == "white"
-        hi Normal ctermbg=231 ctermfg=239 guibg=#ffffff guifg=#404040 gui=none
+        hi Normal ctermbg=231 ctermfg=239 guibg=#ffffff guifg=#606060 gui=none
         hi CursorColumn ctermbg=NONE ctermfg=NONE guibg=NONE gui=NONE
         hi CursorLine ctermbg=254 ctermfg=NONE cterm=none guibg=#dfdfdf gui=none
     endif
