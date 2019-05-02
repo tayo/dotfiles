@@ -122,6 +122,11 @@ if [ -f ~/.bashrc_google ]; then
     . ~/.bashrc_google
 fi
 
+# Local-specific bash configs.
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bashrc_local
+fi
+
 alias l='ls -CF'
 alias ll='ls -alFh'
 alias la='ls -ACF'
@@ -173,3 +178,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

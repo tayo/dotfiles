@@ -5,6 +5,12 @@ catch
   " No machine-specific vimrc..
 endtry
 
+" Local configs on a given machine
+try
+  source ~/.vimrc_local.vim
+catch
+endtry
+
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
 
@@ -115,7 +121,12 @@ au BufRead,BufNewFile *.ts set filetype=javascript "TypeScript == JavaScript
 if has("gui_running")
   ":set guifont=Monospace\ 10
   ":set guifont=Noto\ Mono\ 12
-  :set guifont=Ubuntu\ Mono\ 11
+  if has('mac')
+    :set guifont=Menlo\ Regular:h12
+  elseif has('unix')
+    :set guifont=Ubuntu\ Mono\ 12
+  endif
+
   set lines=50 columns=120
   :set guioptions-=m  "remove menubar (File, Edit, etc)
   :set guioptions-=T  "remove toolbar
