@@ -70,11 +70,15 @@ if exists('g:gruvbox_contrast')
 endif
 
 if !exists('g:gruvbox_contrast_dark')
-  let g:gruvbox_contrast_dark='medium'
+  " tayo: changing default -- less blackish background
+  " let g:gruvbox_contrast_dark='medium'
+  let g:gruvbox_contrast_dark='soft'
 endif
 
 if !exists('g:gruvbox_contrast_light')
-  let g:gruvbox_contrast_light='medium'
+  " tayo: changing default -- less yellowish background
+  " let g:gruvbox_contrast_light='medium'
+  let g:gruvbox_contrast_light='hard'
 endif
 
 let s:is_dark=(&background == 'dark')
