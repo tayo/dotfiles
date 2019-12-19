@@ -182,3 +182,9 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Source the common XManager bashrc, only adds convenience functions for
+# XManager. From go/brain-bashrc.
+if [ -r /google/data/ro/teams/dmgi/configs/google_xm_bashrc ] ; then
+  source /google/data/ro/teams/dmgi/configs/google_xm_bashrc
+fi

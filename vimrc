@@ -135,3 +135,11 @@ if has("gui_running")
 endif
 
 set vb t_vb=       "turn off all audible bells etc
+
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+command! TrimWhitespace call TrimWhitespace()
