@@ -1,4 +1,8 @@
 " Machine-specific configs
+
+" Enable modern Vim features not compatible with Vi spec.
+set nocompatible
+
 try
   source /usr/local/google/home/tayo/.vimrc_google
 catch
@@ -11,19 +15,15 @@ try
 catch
 endtry
 
-" Enable modern Vim features not compatible with Vi spec.
-set nocompatible
-
 let mapleader=","
 
-"tayo's external vimrc config below
 
 "Colorscheme
 set t_Co=256    "enable 256 color support in vim
 let g:lucius_style="dark"
 let g:moria_style="white"  " white, light, dark, black
 let g:inkpot_black_background=0
-color moria_tayo "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
+color jellybeans "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
 syntax on
 
 "set background=dark
@@ -45,6 +45,9 @@ set modeline
 set ls=2
 set number       "line numbers
 "set mouse=a     "enable mouse usage
+
+"
+let g:python_recommended_style=0    " Use yapf for formatting
 
 "set paste   "paste things without worrying about indenting 'nopaste' to turn off
 set pastetoggle=<F2>
@@ -87,7 +90,8 @@ map <C-P> <C-W>f
 "CTRL-A is useful for tmux. I never use the number increment.
 map <C-a> <Nop>
 
-filetype on
+
+" filetype on
 autocmd FileType cc,c,cpp,h :set cindent
 autocmd FileType make :set noexpandtab      "use hard tabs in Makefiles
 autocmd FileType perl :hi Comment ctermfg=Blue

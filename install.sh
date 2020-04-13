@@ -11,6 +11,9 @@ ln -s DIR/gitconfig  .gitconfig
 ln -s DIR/gitignore  .gitignore
 ln -s DIR/gitignore  .gitignore
 
+mkdir -p .config/yapf/
+ln -s DIR/config_yapf_style  .config/yapf/style
+
 # Check to make sure there is no special sauce in existing bashrc
 #ln -s DIR/bashrc     .bashrc
 #ln -s DIR/screenrc   .screenrc
