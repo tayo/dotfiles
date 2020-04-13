@@ -23,7 +23,7 @@ set t_Co=256    "enable 256 color support in vim
 let g:lucius_style="dark"
 let g:moria_style="white"  " white, light, dark, black
 let g:inkpot_black_background=0
-color jellybeans "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
+color moria_tayo "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
 syntax on
 
 "set background=dark
