@@ -127,6 +127,7 @@ if has("gui_running")
   ":set guifont=Noto\ Mono\ 12
   if has('mac')
     :set guifont=Menlo\ Regular:h12
+    :set guioptions+=k  "Keep window size when resizing
   elseif has('unix')
     :set guifont=Ubuntu\ Mono\ 12
   endif
