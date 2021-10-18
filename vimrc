@@ -23,7 +23,8 @@ set t_Co=256    "enable 256 color support in vim
 let g:lucius_style="dark"
 let g:moria_style="white"  " white, light, dark, black
 let g:inkpot_black_background=0
-color jellybeans "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
+set bg=dark
+color moria_tayo "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
 syntax on
 
 "set background=dark
@@ -85,6 +86,9 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+"JK or KJ can be used to exit insert mode
+inoremap jk <esc>
+inoremap kj <esc>
 "CTRL-P: open file under cursor in new split window
 map <C-P> <C-W>f
 "CTRL-A is useful for tmux. I never use the number increment.
