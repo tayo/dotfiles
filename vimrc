@@ -82,15 +82,15 @@ command FL execute "FormatLines"
 "use CTRL-N to remove highlighted search terms
 nmap <silent> <C-N> :silent noh<CR>h
 "CTRL-[J|K|H|L] to move between windows
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-H> <C-W>h
-map <C-L> <C-W>l
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
 "JK or KJ can be used to exit insert mode
 inoremap jk <esc>
 inoremap kj <esc>
 "CTRL-P: open file under cursor in new split window
-map <C-P> <C-W>f
+nnoremap <C-P> <C-W>f
 "CTRL-A is useful for tmux. I never use the number increment.
 map <C-a> <Nop>
 
