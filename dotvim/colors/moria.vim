@@ -207,10 +207,15 @@ elseif &background == "light"
         hi VertSplit ctermbg=LightGray ctermfg=Black guibg=#a6b7db guifg=fg gui=none
     endif
     hi Cursor guibg=#883400 guifg=bg gui=none
-    hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
-    hi DiffChange guibg=#00008b guifg=#ffffff gui=none
-    hi DiffDelete guibg=#8b0000 guifg=#ffffff gui=none
-    hi DiffText guibg=#0000cd guifg=#ffffff gui=bold
+    " tayo: softer colors for diff (taken from Lucius light version)
+    hi DiffAdd      guifg=fg        guibg=#d0e0d0   ctermfg=fg     ctermbg=151       gui=none      cterm=none
+    hi DiffChange   guifg=fg        guibg=#e0d6c0   ctermfg=fg     ctermbg=187       gui=none      cterm=none
+    hi DiffDelete   guifg=fg        guibg=#f0d0d0   ctermfg=fg     ctermbg=181       gui=none      cterm=none
+    hi DiffText     guifg=#d05000   guibg=#e0d6c0   ctermfg=160    ctermbg=187       gui=bold      cterm=bold
+    "hi DiffAdd guibg=#008b00 guifg=#ffffff gui=none
+    "hi DiffChange guibg=#00008b guifg=#ffffff gui=none
+    "hi DiffDelete guibg=#8b0000 guifg=#ffffff gui=none
+    "hi DiffText guibg=#0000cd guifg=#ffffff gui=bold
     hi Directory guibg=bg guifg=#0000f0 gui=none
     hi ErrorMsg guibg=#ee2c2c guifg=#ffffff gui=bold
     hi IncSearch guibg=#ffcd78 gui=none
