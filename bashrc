@@ -88,8 +88,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1="\[\033[1;35m\][\$(date +%H%M)]\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0m\]$ "
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # Colored prompt with time
+    # PS1="\[\033[1;35m\][\$(date +%H%M)]\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0m\]$ "
+
+    # Two-line custom prompt
+    PS1="[\[$(tput sgr0)\]\[\033[38;5;208m\]\A\[$(tput sgr0)\]] \h:\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;61m\]\w\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='\u@\h:\w\$ '
@@ -118,13 +122,14 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Google-specific bash configs.
-if [ -f ~/.bashrc_google ]; then
-    . ~/.bashrc_google
+# Disabled for now, as they are making bash prompt very slow.
+if [ -r ~/.bashrc_google ]; then
+    source ~/.bashrc_google
 fi
 
 # Local-specific bash configs.
-if [ -f ~/.bashrc_local ]; then
-    . ~/.bashrc_local
+if [ -r ~/.bashrc_local ]; then
+    source ~/.bashrc_local
 fi
 
 alias l='ls -CF'
@@ -134,11 +139,10 @@ alias pd='pushd'
 alias hh='history | less'
 alias ssh='ssh -Y'
 alias sr="screen -R"
+alias tmux='tmx2 -2'  # -2: assume 256 colors
+export PATH=$PATH:~/.local/bin
 #export PATH=$PATH:/home/tayo/bin/
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # MacOS-specific
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
