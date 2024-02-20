@@ -18,14 +18,18 @@ endtry
 let mapleader=","
 
 
-"Colorscheme
+"Colors
 set t_Co=256    "enable 256 color support in vim
+set termguicolors
 let g:lucius_style="dark"
-let g:moria_style="white"  " white, light, dark, black
+let g:moria_style="light"  " white, light, dark, black
 let g:inkpot_black_background=0
 set bg=dark
-color moria_tayo "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
+" colors
+"   light: moria_tayo,moria,papercolor,lunaperche,gruvbox
+"   dark:  gruvbox,habamax,jellybeans,lucius,papercolor,wombat256,xoria256,zenburn256
 syntax on
+color moria
 
 "set background=dark
 set tabstop=2
@@ -103,6 +107,10 @@ autocmd FileType tex :map <silent> <C-V> :s/^/%/<CR><C-N><CR>
 autocmd Filetype stata :set ft=sh
 " set wfh (make window height static), wfw (window width static)
 "autocmd FileType tex :map <silent> <C-?> :s/^/%/<CR><C-N><CR>
+
+" Exit insert mode
+inoremap jk <esc>
+inoremap kj <esc>
 
 ":set cinoptions=(0,1N,g2,h2,:2,=2
 
