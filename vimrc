@@ -28,6 +28,7 @@ set bg=dark
 " colors
 "   light: moria_tayo,moria,papercolor,lunaperche,gruvbox
 "   dark:  gruvbox,habamax,jellybeans,lucius,papercolor,wombat256,xoria256,zenburn256
+color jellybeans  "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
 syntax on
 color moria
 

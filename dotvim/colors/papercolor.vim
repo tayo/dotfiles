@@ -2250,7 +2250,7 @@ command! -nargs=0 PaperColor :call g:PaperColor()
 
 hi clear
 syntax reset
-let g:colors_name = "PaperColor"
+let g:colors_name = "papercolor"
 
 call s:acquire_theme_data()
 call s:identify_color_mode()
