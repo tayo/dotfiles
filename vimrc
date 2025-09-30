@@ -1,10 +1,12 @@
-" Machine-specific configs
+
+" Enable filetype detection, plugins, and indentation
+filetype plugin indent on
 
 " Enable modern Vim features not compatible with Vi spec.
 set nocompatible
 
 try
-  source /usr/local/google/home/tayo/.vimrc_google
+  source /usr/local/google/home/tayo/.vimrc_microsoft
 catch
   " No machine-specific vimrc..
 endtry
@@ -19,6 +21,7 @@ let mapleader=","
 
 
 "Colors
+syntax on
 set t_Co=256    "enable 256 color support in vim
 set termguicolors
 let g:lucius_style="dark"
@@ -29,12 +32,11 @@ set bg=dark
 "   light: moria_tayo,moria,papercolor,lunaperche,gruvbox
 "   dark:  gruvbox,habamax,jellybeans,lucius,papercolor,wombat256,xoria256,zenburn256
 color jellybeans  "zenburn256,lucius,wombat256,moria_tayo,xoria256,jellybeans,gruvbox
-syntax on
-color moria
 
 "set background=dark
 set tabstop=2
 set shiftwidth=2
+set softtabstop=2
 set cindent
 "set smartindent "apparently deprecated..
 set autoindent
@@ -65,7 +67,7 @@ autocmd WinLeave * set nocursorline
 
 set tags=./tags;/
 
-set wildmenu wildmode=longest:full
+set wildmenu wildmode=longest:full,full
 
 "Status line: configure this better
 "set statusline=%.100F
@@ -87,27 +89,30 @@ command FL execute "FormatLines"
 "use CTRL-N to remove highlighted search terms
 nmap <silent> <C-N> :silent noh<CR>h
 "CTRL-[J|K|H|L] to move between windows
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-H> <C-W>h
-nnoremap <C-L> <C-W>l
+nnoremap <silent> <C-J> <C-W>j
+nnoremap <silent> <C-K> <C-W>k
+nnoremap <silent> <C-H> <C-W>h
+nnoremap <silent> <C-L> <C-W>l
 "JK or KJ can be used to exit insert mode
 inoremap jk <esc>
 inoremap kj <esc>
 "CTRL-P: open file under cursor in new split window
 nnoremap <C-P> <C-W>f
 "CTRL-A is useful for tmux. I never use the number increment.
-map <C-a> <Nop>
+nnoremap <C-a> <Nop>
 
 
 " filetype on
-autocmd FileType cc,c,cpp,h :set cindent
-autocmd FileType make :set noexpandtab      "use hard tabs in Makefiles
-autocmd FileType perl :hi Comment ctermfg=Blue
-autocmd FileType tex :map <silent> <C-V> :s/^/%/<CR><C-N><CR>
-autocmd Filetype stata :set ft=sh
+augroup filetype_settings
+  autocmd FileType cc,c,cpp,h,cu set smartindent "cindent
+  autocmd FileType make set noexpandtab      "use hard tabs in Makefiles
+  autocmd FileType perl hi Comment ctermfg=Blue
+  autocmd FileType tex map <silent> <C-V> :s/^/%/<CR><C-N><CR>
+  autocmd Filetype stata set ft=sh
+  autocmd FileType typescript set filetype=javascript
 " set wfh (make window height static), wfw (window width static)
 "autocmd FileType tex :map <silent> <C-?> :s/^/%/<CR><C-N><CR>
+augroup END
 
 " Exit insert mode
 inoremap jk <esc>
@@ -128,9 +133,6 @@ let g:netrw_altv=1 "open new file in vertical split (autochdir focuses there)
 :set noea
 :set nosplitright
 
-"au BufRead,BufNewFile *.maxj set filetype=java "maxeler maxj files are java
-au BufRead,BufNewFile *.cu  set filetype=c "use C-style options for CUDA files
-au BufRead,BufNewFile *.ts set filetype=javascript "TypeScript == JavaScript
 
 "set spell   "turn on spell-checking
 
