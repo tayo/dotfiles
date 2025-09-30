@@ -4,6 +4,15 @@
 # Last updated: September 29, 2025
 
 # ------------------------------------------------------------------
+# 0. SOURCE OTHER CUSTOM FILES.
+# ------------------------------------------------------------------
+# Source commands particular to microsoft.
+msft_zshrc='$HOME/.zshrc_microsoft'
+if [ -n "$msft_zshrc" ] && [ -f "$msft_zshrc" ]; then
+    source $msft_zshrc
+fi
+
+# ------------------------------------------------------------------
 # 1. ENVIRONMENT VARIABLES & PATH
 # ------------------------------------------------------------------
 # Set the default editor (change 'vim' to 'nano', 'code', etc.)
@@ -11,7 +20,6 @@ export EDITOR='vim'
 
 # Set the default pager
 export PAGER='less'
-less -R # Make less pass through color codes
 
 # Add useful locations to your command search path ($PATH).
 # The order matters. Directories are searched from left to right.
@@ -86,6 +94,7 @@ alias pd='pushd'
 alias hh='history | less'
 alias ssh='ssh -Y'
 alias sr="screen -R"
+alias less='less -R'
 
 # Example alias for system updates
 # Uncomment and adapt for your system
